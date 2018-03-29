@@ -39,6 +39,14 @@ function escapeAtPartialBlock(partialString) {
   return partial;
 }
 
+// Load custom user helpers, @see: https://github.com/pattern-lab/patternlab-node/blob/master/packages/engine-nunjucks/lib/engine_nunjucks.js#L32
+try {
+  var handlebarsConfig = require(path.join(process.cwd(), 'patternlab-handlebars-config.js'));
+  if (typeof handlebarsConfig == 'function') {
+    handlebarsConfig(Handlebars);
+  }
+} catch (err) { }
+
 var engine_handlebars = {
   engine: Handlebars,
   engineName: 'handlebars',
