@@ -542,8 +542,8 @@ const ui_builder = function() {
 
         const subTypePromises = _.map(
           _.values(patternGroup),
-          (patternSubtypes, patternSubtype) => {
-            const patternPartial = patternType + '-' + patternSubtype;
+          (patternSubtypes, patternSubtype, collection) => {
+            const patternPartial = patternType + '-' + _.values(patternSubtypes)[patternSubtype].patternName.toLowerCase();
 
             //do not create a viewall page for flat patterns
             if (patternType === patternSubtype) {
