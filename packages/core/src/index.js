@@ -239,6 +239,8 @@ const patternlab_module = function(config) {
                             );
                           }
 
+                          patternlab.events.emit(events.PATTERNLAB_BUILD_PATTERN_END, patternlab);
+
                           //export patterns if necessary
                           pattern_exporter.export_patterns(patternlab);
                         })

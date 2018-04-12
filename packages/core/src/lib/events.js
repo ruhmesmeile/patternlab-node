@@ -17,6 +17,13 @@ const EVENTS = Object.freeze({
   PATTERNLAB_BUILD_PATTERN_START: 'patternlab-build-pattern-start',
 
   /**
+   * @desc Emitted after all patterns were written.
+   * @property {object} patternlab - global data store
+   *
+   */
+  PATTERNLAB_BUILD_PATTERN_END: 'patternlab-build-pattern-end',
+
+  /**
    * @desc Emitted after patterns are iterated over to gather data about them. Right before Pattern Lab processes and renders patterns into HTML
    * @property {object} patternlab - global data store
    */
